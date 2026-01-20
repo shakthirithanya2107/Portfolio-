@@ -30,8 +30,18 @@ export function SkillsSection() {
                 };
             case 'Organization':
                 return {
+                    image: '/organization.png',
+                    description: "Detail-oriented organizer capable of managing events and complex schedules efficiently."
+                };
+            case 'Event Co-ordinator':
+                return {
                     image: '/neurosphere.png',
                     description: "Overall Co-ordinator of Neurosphere Galaxy. Orchestrated a major fundraising event for a noble cause."
+                };
+            case 'Technical Mentorship':
+                return {
+                    image: '/workshop.png',
+                    description: "Conducted hands-on technical workshops to mentor students in practical skills."
                 };
             default:
                 return {
