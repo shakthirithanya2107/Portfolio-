@@ -159,6 +159,17 @@ export const defaultData: PortfolioData = {
     ],
     projects: [
         {
+            id: "new-1",
+            name: "AI-Powered Financial Statement Analyzer (v1.2 PRO)",
+            description: "A Financial Intelligence Platform that transforms static PDF reports into actionable investment insights in seconds. Features a 3-Stage Analysis Pipeline: Extraction Lab, Analysis Desk, and AI War Room.",
+            techStack: ["Python", "Streamlit", "Gemini 1.5", "Pandas", "Plotly"],
+            image: "/fin_analyzer_dashboard.png",
+            githubLink: "https://lnkd.in/gQDP5tVq",
+            liveLink: "",
+            role: "Lead Developer & Architect",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -202,12 +213,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v7');
+        const stored = localStorage.getItem('portfolio_data_v8');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v7', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v8', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
