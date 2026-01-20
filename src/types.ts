@@ -1,127 +1,233 @@
-// Data types for portfolio content
-export interface AboutData {
+// Portfolio Data Types
+export interface ProfileData {
     name: string;
-    title: string;
+    headline: string;
+    role: string;
     bio: string;
     image: string;
-    email: string;
-    phone: string;
-    location: string;
-    social: {
+    education: {
+        degree: string;
+        college: string;
+        year: string;
+        graduation: string;
+    };
+    contact: {
+        email: string;
         github: string;
         linkedin: string;
-        twitter: string;
     };
 }
 
 export interface Skill {
     id: string;
     name: string;
-    level: number; // 0-100
     category: string;
+    level: number;
     icon: string;
-}
-
-export interface Activity {
-    id: string;
-    title: string;
-    description: string;
-    date: string;
-    type: 'achievement' | 'participation';
-    image: string;
-    link?: string;
+    color: string;
 }
 
 export interface Project {
     id: string;
-    title: string;
+    name: string;
     description: string;
-    image: string;
-    technologies: string[];
+    techStack: string[];
+    role: string;
     githubLink: string;
     liveLink?: string;
+    image: string;
     featured: boolean;
 }
 
-export interface ResumeData {
-    pdfUrl: string;
-    lastUpdated: string;
+export interface Experience {
+    id: string;
+    title: string;
+    organization: string;
+    description: string;
+    date: string;
+    type: 'achievement' | 'experience' | 'education';
 }
 
 export interface PortfolioData {
-    about: AboutData;
+    profile: ProfileData;
     skills: Skill[];
-    activities: Activity[];
     projects: Project[];
-    resume: ResumeData;
+    experiences: Experience[];
 }
 
-// Default data
+// Default Data
 export const defaultData: PortfolioData = {
-    about: {
-        name: "Your Name",
-        title: "Full Stack Developer & Designer",
-        bio: "Passionate developer with a keen eye for design and a love for creating beautiful, functional web experiences. Specialized in modern web technologies and 3D interactive interfaces.",
-        image: "/default-avatar.png",
-        email: "your.email@example.com",
-        phone: "+1 234 567 8900",
-        location: "San Francisco, CA",
-        social: {
-            github: "https://github.com/yourusername",
-            linkedin: "https://linkedin.com/in/yourusername",
-            twitter: "https://twitter.com/yourusername"
+    profile: {
+        name: "Shakthi Rithanya",
+        headline: "AI/ML Undergraduate | Full Stack | ML Developer | Data Analyst | Finance Model Driven",
+        role: "Student, Builder",
+        bio: "I build AI, ML, and intelligent systems. Passionate about creating innovative solutions that bridge technology and real-world problems. Currently pursuing BE CSE (AI & ML) at KGISL Institute of Technology.",
+        image: "",
+        education: {
+            degree: "BE CSE (AI & ML)",
+            college: "KGISL Institute of Technology",
+            year: "2nd Year",
+            graduation: "2028"
+        },
+        contact: {
+            email: "shakthirithanyasr07@gmail.com",
+            github: "https://github.com/ShakthiRithanya",
+            linkedin: "https://www.linkedin.com/in/shakthi-rithanya-s-461a2a314/"
         }
     },
     skills: [
-        { id: '1', name: 'React', level: 90, category: 'Frontend', icon: '⚛️' },
-        { id: '2', name: 'TypeScript', level: 85, category: 'Language', icon: '📘' },
-        { id: '3', name: 'Three.js', level: 75, category: 'Graphics', icon: '🎨' },
-        { id: '4', name: 'Node.js', level: 80, category: 'Backend', icon: '🟢' },
-        { id: '5', name: 'Python', level: 85, category: 'Language', icon: '🐍' },
-        { id: '6', name: 'UI/UX Design', level: 88, category: 'Design', icon: '✨' },
-    ],
-    activities: [
         {
-            id: '1',
-            title: 'Hackathon Winner',
-            description: 'Won first place at XYZ Hackathon for innovative web solution',
-            date: '2024-01-15',
-            type: 'achievement',
-            image: '/activity1.jpg',
-            link: 'https://example.com'
+            id: "1",
+            name: "Python",
+            category: "Programming",
+            level: 90,
+            icon: "🐍",
+            color: "#60A5FA"
         },
         {
-            id: '2',
-            title: 'Tech Conference Speaker',
-            description: 'Presented on Modern Web Development at Tech Summit 2024',
-            date: '2024-03-20',
-            type: 'participation',
-            image: '/activity2.jpg'
+            id: "2",
+            name: "AI Tools",
+            category: "Technology",
+            level: 85,
+            icon: "🤖",
+            color: "#A78BFA"
+        },
+        {
+            id: "3",
+            name: "Leadership",
+            category: "Soft Skills",
+            level: 88,
+            icon: "👑",
+            color: "#F472B6"
+        },
+        {
+            id: "4",
+            name: "Communication",
+            category: "Soft Skills",
+            level: 85,
+            icon: "💬",
+            color: "#22D3EE"
+        },
+        {
+            id: "5",
+            name: "Machine Learning",
+            category: "Technology",
+            level: 82,
+            icon: "🧠",
+            color: "#818CF8"
+        },
+        {
+            id: "6",
+            name: "Full Stack Development",
+            category: "Programming",
+            level: 80,
+            icon: "💻",
+            color: "#60A5FA"
         }
     ],
     projects: [
         {
-            id: '1',
-            title: '3D Portfolio Website',
-            description: 'An interactive 3D portfolio showcasing projects with stunning visual effects',
-            image: '/project1.jpg',
-            technologies: ['React', 'Three.js', 'TypeScript', 'Tailwind CSS'],
-            githubLink: 'https://github.com/yourusername/portfolio',
-            liveLink: 'https://yourportfolio.com',
+            id: "1",
+            name: "Project Name",
+            description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
+            techStack: ["Python", "TensorFlow", "React"],
+            role: "Full Stack Developer",
+            githubLink: "https://github.com/ShakthiRithanya",
+            image: "",
             featured: true
         },
         {
-            id: '2',
-            title: 'E-Commerce Platform',
-            description: 'Full-stack e-commerce solution with payment integration',
-            image: '/project2.jpg',
-            technologies: ['Next.js', 'Node.js', 'MongoDB', 'Stripe'],
-            githubLink: 'https://github.com/yourusername/ecommerce',
+            id: "2",
+            name: "Another Project",
+            description: "What it does: [Describe the project]\n\nTech used: [Technologies]\n\nYour role: [Your role]",
+            techStack: ["Python", "FastAPI", "PostgreSQL"],
+            role: "Backend Developer",
+            githubLink: "https://github.com/ShakthiRithanya",
+            image: "",
             featured: false
         }
     ],
-    resume: {
-        pdfUrl: '/resume.pdf',
-        lastUpdated: new Date().toISOString()
+    experiences: [
+        {
+            id: "1",
+            title: "Achievement Title",
+            organization: "Organization Name",
+            description: "Description of achievement or experience",
+            date: "2024",
+            type: "achievement"
+        },
+        {
+            id: "2",
+            title: "Experience Title",
+            organization: "Company/Organization",
+            description: "What you did and learned",
+            date: "2023-2024",
+            type: "experience"
+        }
+    ]
+};
+
+// Storage utilities
+export const storage = {
+    getData: (): PortfolioData => {
+        const stored = localStorage.getItem('portfolio_data_v2');
+        return stored ? JSON.parse(stored) : defaultData;
+    },
+
+    saveData: (data: PortfolioData) => {
+        localStorage.setItem('portfolio_data_v2', JSON.stringify(data));
+        window.dispatchEvent(new Event('storage'));
+    },
+
+    updateProfile: (profile: Partial<ProfileData>) => {
+        const data = storage.getData();
+        storage.saveData({ ...data, profile: { ...data.profile, ...profile } });
+    },
+
+    updateSkills: (skills: Skill[]) => {
+        const data = storage.getData();
+        storage.saveData({ ...data, skills });
+    },
+
+    updateProjects: (projects: Project[]) => {
+        const data = storage.getData();
+        storage.saveData({ ...data, projects });
+    },
+
+    updateExperiences: (experiences: Experience[]) => {
+        const data = storage.getData();
+        storage.saveData({ ...data, experiences });
+    },
+
+    exportData: () => {
+        const data = storage.getData();
+        const dataStr = JSON.stringify(data, null, 2);
+        const blob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `portfolio-data-${new Date().toISOString().split('T')[0]}.json`;
+        link.click();
+        URL.revokeObjectURL(url);
+    },
+
+    importData: (file: File) => {
+        return new Promise<void>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target?.result as string);
+                    storage.saveData(data);
+                    resolve();
+                } catch (error) {
+                    reject(error);
+                }
+            };
+            reader.readAsText(file);
+        });
+    },
+
+    reset: () => {
+        storage.saveData(defaultData);
     }
 };

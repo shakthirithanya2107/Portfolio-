@@ -1,43 +1,63 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        pastel: {
-          pink: '#FFD6E8',
-          lavender: '#E6D9FF',
-          mint: '#D6F5E8',
-          peach: '#FFE5D9',
-          sky: '#D9E8FF',
-          yellow: '#FFF4D6',
-          coral: '#FFD9D9',
-          purple: '#E8D6FF',
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+            colors: {
+                // Light futuristic theme
+                'cyber-white': '#FFFFFF',
+                'cyber-light': '#F8FAFC',
+                'cyber-gray': '#E2E8F0',
+                'cyber-blue': '#60A5FA',
+                'cyber-purple': '#A78BFA',
+                'cyber-pink': '#F472B6',
+                'cyber-cyan': '#22D3EE',
+                'cyber-accent': '#818CF8',
+                'cyber-dark': '#1E293B',
+                'cyber-text': '#0F172A',
+            },
+            fontFamily: {
+                'display': ['Space Grotesk', 'sans-serif'],
+                'body': ['Inter', 'sans-serif'],
+                'mono': ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+                'float': 'float 6s ease-in-out infinite',
+                'glow': 'glow 2s ease-in-out infinite',
+                'slide-up': 'slideUp 0.6s ease-out',
+                'fade-in': 'fadeIn 0.8s ease-out',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+                float: {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-20px)' },
+                },
+                glow: {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.5' },
+                },
+                slideUp: {
+                    '0%': { transform: 'translateY(100px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                },
+            },
+            backdropBlur: {
+                'xs': '2px',
+            },
+            boxShadow: {
+                'glow': '0 0 20px rgba(96, 165, 250, 0.5)',
+                'glow-lg': '0 0 40px rgba(96, 165, 250, 0.6)',
+                'cyber': '0 8px 32px rgba(31, 38, 135, 0.15)',
+            },
         },
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'gradient': 'gradient 8s linear infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(255, 214, 232, 0.5)' },
-          '100%': { boxShadow: '0 0 40px rgba(230, 217, 255, 0.8)' },
-        },
-        gradient: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
-      },
     },
-  },
-  plugins: [],
+    plugins: [],
 }
