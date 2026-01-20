@@ -23,33 +23,45 @@ export function HeroSection() {
     return (
         <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
             {/* Content */}
-            <div className="relative z-20 max-w-6xl mx-auto text-center">
+            {/* Content Container */}
+            <div className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+
+                {/* Visual Placeholder (Left Side) */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="flex-shrink-0"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
                 >
-                    {/* Profile Image Placeholder */}
-                    {data.image && (
-                        <motion.div
-                            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full p-1 bg-gradient-to-tr from-cyber-blue to-cyber-purple shadow-glow-lg"
-                            initial={{ scale: 0, rotate: -180 }}
-                            animate={{ scale: 1, rotate: 0 }}
-                            transition={{ duration: 0.8, type: 'spring' }}
-                        >
-                            <div className="w-full h-full rounded-full overflow-hidden border-4 border-white">
+                    {data.image ? (
+                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-cyber-blue to-cyber-purple shadow-glow-lg overflow-hidden relative group">
+                            <div className="w-full h-full rounded-full overflow-hidden border-4 border-white bg-white">
                                 <img
                                     src={data.image}
                                     alt={data.name}
-                                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
-                        </motion.div>
+                            {/* Decorative Orbit */}
+                            <div className="absolute inset-0 rounded-full border-2 border-white/30 animate-spin-slow pointer-events-none" />
+                        </div>
+                    ) : (
+                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-tr from-cyber-blue to-cyber-purple flex items-center justify-center shadow-glow-lg">
+                            <span className="text-6xl">👤</span>
+                        </div>
                     )}
+                </motion.div>
 
+                {/* Text Content (Right Side) */}
+                <motion.div
+                    className="text-center md:text-left max-w-2xl"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
                     {/* Greeting */}
                     <motion.p
-                        className="text-xl md:text-2xl font-mono text-cyber-blue mb-4"
+                        className="text-2xl md:text-3xl font-mono text-cyber-blue font-bold mb-4"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4 }}
@@ -59,8 +71,8 @@ export function HeroSection() {
 
                     {/* Name */}
                     <motion.h1
-                        className="text-6xl md:text-8xl lg:text-9xl font-display font-bold text-gradient mb-6 text-3d"
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        className="text-6xl md:text-8xl font-display font-bold text-cyber-dark mb-6 drop-shadow-sm"
+                        initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
@@ -69,7 +81,7 @@ export function HeroSection() {
 
                     {/* Headline */}
                     <motion.h2
-                        className="text-2xl md:text-4xl lg:text-5xl font-display font-semibold text-cyber-dark mb-8 max-w-4xl mx-auto leading-tight"
+                        className="text-2xl md:text-3xl font-display font-semibold text-slate-700 mb-8 leading-tight"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.8 }}
@@ -79,7 +91,7 @@ export function HeroSection() {
 
                     {/* Bio */}
                     <motion.p
-                        className="text-lg md:text-xl text-cyber-text opacity-80 max-w-3xl mx-auto mb-12 leading-relaxed"
+                        className="text-lg md:text-xl text-slate-800 font-medium opacity-90 mb-12 leading-relaxed"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1 }}
@@ -89,21 +101,21 @@ export function HeroSection() {
 
                     {/* CTA Buttons */}
                     <motion.div
-                        className="flex flex-wrap gap-6 justify-center mb-16"
+                        className="flex flex-wrap gap-6 justify-center md:justify-start mb-12"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.2 }}
                     >
                         <button
                             onClick={scrollToProjects}
-                            className="btn-primary text-lg px-8 py-4 flex items-center gap-3 group"
+                            className="btn-primary text-lg px-8 py-4 flex items-center gap-3 group shadow-lg"
                         >
                             View Projects
                             <ArrowDown className="group-hover:translate-y-1 transition-transform" size={20} />
                         </button>
                         <button
                             onClick={scrollToContact}
-                            className="btn-secondary text-lg px-8 py-4"
+                            className="btn-secondary text-lg px-8 py-4 bg-white/80 hover:bg-white shadow-md border-cyber-blue/50 text-cyber-dark"
                         >
                             Contact Me
                         </button>
@@ -111,7 +123,7 @@ export function HeroSection() {
 
                     {/* Social Links */}
                     <motion.div
-                        className="flex gap-6 justify-center"
+                        className="flex gap-6 justify-center md:justify-start"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.4 }}
@@ -120,7 +132,7 @@ export function HeroSection() {
                             href={data.contact.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass p-4 rounded-full hover-glow transition-all"
+                            className="p-4 rounded-full bg-white/80 hover:bg-white shadow-md hover-lift transition-all border border-cyber-gray"
                             aria-label="GitHub"
                         >
                             <Github size={28} className="text-cyber-dark" />
@@ -129,14 +141,14 @@ export function HeroSection() {
                             href={data.contact.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass p-4 rounded-full hover-glow transition-all"
+                            className="p-4 rounded-full bg-white/80 hover:bg-white shadow-md hover-lift transition-all border border-cyber-gray"
                             aria-label="LinkedIn"
                         >
                             <Linkedin size={28} className="text-cyber-dark" />
                         </a>
                         <a
                             href={`mailto:${data.contact.email}`}
-                            className="glass p-4 rounded-full hover-glow transition-all"
+                            className="p-4 rounded-full bg-white/80 hover:bg-white shadow-md hover-lift transition-all border border-cyber-gray"
                             aria-label="Email"
                         >
                             <Mail size={28} className="text-cyber-dark" />

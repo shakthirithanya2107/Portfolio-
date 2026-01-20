@@ -28,6 +28,9 @@ function HomePage() {
       {/* 3D Background Scene */}
       <Hero3DScene scrollY={scrollY} />
 
+      {/* READABILITY LAYER: Transparent white overlay to make text pop against 3D shapes */}
+      <div className="fixed inset-0 bg-white/60 backdrop-blur-[1px] z-0 pointer-events-none" />
+
       {/* Navigation */}
       <Navigation />
 

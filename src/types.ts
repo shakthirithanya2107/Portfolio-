@@ -87,7 +87,7 @@ export const defaultData: PortfolioData = {
         {
             id: "2",
             name: "AI Tools",
-            category: "Technology",
+            category: "Programming",
             level: 85,
             icon: "🤖",
             color: "#A78BFA"
@@ -111,7 +111,7 @@ export const defaultData: PortfolioData = {
         {
             id: "5",
             name: "Machine Learning",
-            category: "Technology",
+            category: "Programming",
             level: 82,
             icon: "🧠",
             color: "#818CF8"
