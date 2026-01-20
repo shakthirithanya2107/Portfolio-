@@ -32,11 +32,11 @@ export function SkillsSection() {
                 </motion.div>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                    {data.map((skill, index) => (
+                <div className="flex flex-wrap justify-center gap-8 mb-12">
+                    {data.filter(s => s.category === 'Life Skills').map((skill, index) => (
                         <motion.div
                             key={skill.id}
-                            className="relative group"
+                            className="relative group w-40 h-40"
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -46,26 +46,25 @@ export function SkillsSection() {
                         >
                             {/* Skill Orb */}
                             <div
-                                className="aspect-square glass-strong rounded-full flex flex-col items-center justify-center p-6 hover-glow cursor-pointer transition-all duration-300"
+                                className="w-full h-full glass-strong rounded-full flex flex-col items-center justify-center p-6 hover-glow cursor-pointer transition-all duration-300"
                                 style={{
                                     boxShadow: hoveredSkill === skill.id ? `0 0 40px ${skill.color}80` : undefined,
                                     transform: hoveredSkill === skill.id ? 'scale(1.1) translateY(-10px)' : undefined
                                 }}
                             >
-                                <div className="text-5xl mb-2 animate-float">{skill.icon}</div>
-                                <div className="text-sm font-semibold text-center text-cyber-dark">{skill.name}</div>
+                                <div className="text-5xl mb-3 animate-float">{skill.icon}</div>
+                                <div className="text-base font-bold text-center text-cyber-dark">{skill.name}</div>
                             </div>
 
                             {/* Hover Popup */}
                             {hoveredSkill === skill.id && (
                                 <motion.div
-                                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50"
+                                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 w-48"
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <div className="glass-strong rounded-2xl p-4 min-w-[200px] shadow-2xl">
-                                        <div className="text-sm font-semibold text-cyber-dark mb-2">{skill.category}</div>
+                                    <div className="glass-strong rounded-2xl p-4 shadow-2xl bg-white/90">
                                         <div className="w-full bg-cyber-gray rounded-full h-2 mb-2">
                                             <motion.div
                                                 className="h-full rounded-full"
@@ -75,7 +74,7 @@ export function SkillsSection() {
                                                 transition={{ duration: 0.8, delay: 0.2 }}
                                             />
                                         </div>
-                                        <div className="text-xs text-cyber-text opacity-70">
+                                        <div className="text-xs text-center font-bold text-cyber-dark">
                                             Proficiency: {skill.level}%
                                         </div>
                                     </div>
@@ -84,24 +83,6 @@ export function SkillsSection() {
                         </motion.div>
                     ))}
                 </div>
-
-                {/* Categories */}
-                <motion.div
-                    className="flex flex-wrap gap-4 justify-center"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 }}
-                >
-                    {Array.from(new Set(data.map(s => s.category))).map((category) => (
-                        <div key={category} className="glass-dark px-6 py-3 rounded-full">
-                            <span className="font-semibold text-cyber-dark">{category}</span>
-                            <span className="ml-2 text-cyber-text opacity-70">
-                                ({data.filter(s => s.category === category).length})
-                            </span>
-                        </div>
-                    ))}
-                </motion.div>
             </div>
 
             {/* Animated Background Elements */}

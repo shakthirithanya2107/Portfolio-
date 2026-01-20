@@ -104,12 +104,20 @@ export const defaultData: PortfolioData = {
             id: "4",
             name: "Communication",
             category: "Life Skills",
-            level: 85,
+            level: 90,
             icon: "💬",
             color: "#22D3EE"
         },
         {
             id: "5",
+            name: "Organization",
+            category: "Life Skills",
+            level: 85,
+            icon: "📅",
+            color: "#FCD34D"
+        },
+        {
+            id: "6",
             name: "Machine Learning",
             category: "Programming",
             level: 82,
@@ -117,7 +125,7 @@ export const defaultData: PortfolioData = {
             color: "#818CF8"
         },
         {
-            id: "6",
+            id: "7",
             name: "Full Stack Development",
             category: "Programming",
             level: 80,
@@ -170,12 +178,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v2');
+        const stored = localStorage.getItem('portfolio_data_v3');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v2', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v3', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
