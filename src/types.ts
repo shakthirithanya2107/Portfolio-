@@ -304,6 +304,15 @@ export const defaultData: PortfolioData = {
             image: "/skill_radar_workshop.png"
         },
         {
+            id: "exp-yei-internship",
+            title: "AI Internship (YEI 2025)",
+            organization: "Adverk Technologies",
+            description: "Successfully completed a national-level AI internship. Worked on practical AI projects, gained industry workflow exposure, and transitioned from theoretical learning to building real-world products.",
+            date: "Jul 2025 - Sep 2025",
+            type: "experience",
+            image: "/yei_internship_certificate.png"
+        },
+        {
             id: "ach-1",
             title: "3rd Prize - Math Expo 2025",
             organization: "KITE (Department of Science & Humanities)",
@@ -334,12 +343,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v22');
+        const stored = localStorage.getItem('portfolio_data_v23');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v22', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v23', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
