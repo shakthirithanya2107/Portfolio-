@@ -295,6 +295,15 @@ export const defaultData: PortfolioData = {
     ],
     experiences: [
         {
+            id: "exp-skill-radar",
+            title: "AI Innovation Learning Sprint",
+            organization: "Skill Radar",
+            description: "Completed an intensive hands-on workshop focused on real-time AI delivery. Built custom Voice Agents, designed end-to-end AI automation workflows, and deployed Vibe-Coding web apps, shifting focus from theory to deployment.",
+            date: "Dec 2025",
+            type: "experience",
+            image: "/skill_radar_workshop.png"
+        },
+        {
             id: "ach-1",
             title: "3rd Prize - Math Expo 2025",
             organization: "KITE (Department of Science & Humanities)",
@@ -325,12 +334,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v21');
+        const stored = localStorage.getItem('portfolio_data_v22');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v21', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v22', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 

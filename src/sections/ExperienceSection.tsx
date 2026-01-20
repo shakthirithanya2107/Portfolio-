@@ -83,7 +83,7 @@ export function ExperienceSection() {
                                         <img
                                             src={exp.image}
                                             alt={exp.title}
-                                            className="rounded-xl shadow-lg max-h-60 w-auto object-cover border border-white/20 inline-block"
+                                            className="rounded-xl shadow-lg w-full max-w-lg h-auto border border-white/20 inline-block"
                                         />
                                     </div>
                                 )}
