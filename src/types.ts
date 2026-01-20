@@ -280,6 +280,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-12",
+            name: "SoundSpace 3D - Audio Visualizer",
+            description: "A 3D music analysis tool that reduces 9 audio dimensions into an interactive 3D map using PCA & K-Means clustering. Visualizes 'Taste Clusters' and provides song recommendations based on Euclidean distance.",
+            techStack: ["React", "Python", "Flask", "Scikit-Learn", "Plotly.js"],
+            image: "/soundspace.png",
+            githubLink: "https://github.com/ShakthiRithanya/SoundSpace-3D",
+            liveLink: "",
+            role: "Full Stack Data Engineer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -323,12 +334,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v18');
+        const stored = localStorage.getItem('portfolio_data_v19');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v18', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v19', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
