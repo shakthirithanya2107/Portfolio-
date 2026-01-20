@@ -192,6 +192,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-4",
+            name: "Path Finder - BFS vs DFS Algorithm Visualizer",
+            description: "An interactive web application visualizing BFS and DFS algorithms in real-time. Created to compare performance metrics like execution time and path length within randomized mazes.",
+            techStack: ["Vanilla JS", "HTML5 Canvas", "Chart.js", "CSS3"],
+            image: "/pathfinder.png",
+            githubLink: "https://lnkd.in/gUfZSvs4",
+            liveLink: "",
+            role: "Frontend Developer & Algorithm Engineer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -235,12 +246,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v10');
+        const stored = localStorage.getItem('portfolio_data_v11');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v10', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v11', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
