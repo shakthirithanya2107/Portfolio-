@@ -269,6 +269,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-11",
+            name: "MindWatch - AI Stress Detection",
+            description: "An NLP-powered mental health application that detects stress levels from user text. Features explainable AI, visual feedback, and safety alerts using TF-IDF and Logistic Regression.",
+            techStack: ["Streamlit", "Python", "Scikit-Learn", "NLTK", "Matplotlib"],
+            image: "/mindwatch.png",
+            githubLink: "https://github.com/ShakthiRithanya/text-to-stress-",
+            liveLink: "",
+            role: "AI/NLP Engineer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -312,12 +323,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v17');
+        const stored = localStorage.getItem('portfolio_data_v18');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v17', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v18', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
