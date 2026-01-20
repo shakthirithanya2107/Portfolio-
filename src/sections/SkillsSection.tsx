@@ -4,7 +4,6 @@ import { storage } from '../types';
 
 export function SkillsSection() {
     const [data, setData] = useState(storage.getData().skills);
-    const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
 
     useEffect(() => {
         const handleStorage = () => setData(storage.getData().skills);
@@ -12,103 +11,110 @@ export function SkillsSection() {
         return () => window.removeEventListener('storage', handleStorage);
     }, []);
 
+    const getSkillContent = (name: string) => {
+        switch (name) {
+            case 'Leadership':
+                return {
+                    image: '/badge.png',
+                    description: "Consistently served as Class Monitor from Middle School through High School, demonstrating sustained leadership and trust."
+                };
+            case 'Communication':
+                return {
+                    image: '/communication.png',
+                    description: "Effective communicator with experience in public speaking and team collaboration."
+                };
+            case 'Organization':
+                return {
+                    image: 'https://placehold.co/600x400/e2e8f0/1e293b?text=Organization',
+                    description: "Detail-oriented organizer capable of managing events and complex schedules efficiently."
+                };
+            default:
+                return {
+                    image: 'https://placehold.co/600x400/e2e8f0/1e293b?text=Skill',
+                    description: "Developing and refining this skill through continuous practice and application."
+                };
+        }
+    };
+
     return (
         <section id="skills" className="relative py-32 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <motion.div
-                    className="text-center mb-20"
+                    className="text-center mb-16"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="text-5xl md:text-6xl font-display font-bold text-gradient mb-6">
-                        Skills Galaxy
+                        Life Skills
                     </h2>
                     <p className="text-xl text-cyber-text opacity-70 max-w-2xl mx-auto">
-                        Exploring the universe of technologies and capabilities
+                        Competencies developed through real-world experience
                     </p>
                 </motion.div>
 
                 {/* Skills Grid */}
-                <div className="flex flex-wrap justify-center gap-8 mb-12">
-                    {data.filter(s => s.category === 'Life Skills').map((skill, index) => (
-                        <motion.div
-                            key={skill.id}
-                            className="relative group w-40 flex flex-col items-center"
-                            initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            onMouseEnter={() => setHoveredSkill(skill.id)}
-                            onMouseLeave={() => setHoveredSkill(null)}
-                        >
-                            {/* Skill Orb */}
-                            <div
-                                className="w-40 h-40 glass-strong rounded-full flex flex-col items-center justify-center p-6 hover-glow cursor-pointer transition-all duration-300 shrink-0 relative z-10"
-                                style={{
-                                    boxShadow: hoveredSkill === skill.id ? `0 0 40px ${skill.color}80` : undefined,
-                                    transform: hoveredSkill === skill.id ? 'scale(1.1) translateY(-10px)' : undefined
-                                }}
+                <div className="grid md:grid-cols-3 gap-8">
+                    {data.filter(s => s.category === 'Life Skills').map((skill, index) => {
+                        const content = getSkillContent(skill.name);
+                        return (
+                            <motion.div
+                                key={skill.id}
+                                className="glass-strong rounded-3xl overflow-hidden hover-lift card-3d group"
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.1 }}
                             >
-                                <div className="text-5xl mb-3 animate-float">{skill.icon}</div>
-                                <div className="text-base font-bold text-center text-cyber-dark">{skill.name}</div>
-                            </div>
+                                {/* Image Container */}
+                                <div className="relative h-56 bg-gradient-to-br from-cyber-blue/5 to-cyber-purple/5 border-b border-white/10 overflow-hidden flex items-center justify-center p-6">
+                                    <div className="w-full h-full flex items-center justify-center filter drop-shadow-xl group-hover:scale-110 transition-transform duration-500">
+                                        <img
+                                            src={content.image}
+                                            alt={skill.name}
+                                            className="max-w-full max-h-full object-contain"
+                                        />
+                                    </div>
+                                    <div className="absolute top-4 right-4 glass px-3 py-1 rounded-full text-xs font-bold text-cyber-dark">
+                                        {skill.level}% Proficiency
+                                    </div>
+                                </div>
 
-                            {/* Leadership Badge & Description */}
-                            {skill.name === 'Leadership' && (
-                                <motion.div
-                                    className="pt-8 flex flex-col items-center z-0"
-                                    initial={{ opacity: 0, y: -20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.8 }}
-                                >
-                                    <div className="w-1 h-8 bg-gradient-to-b from-cyber-blue/50 to-transparent absolute top-40" />
-                                    <div className="w-24 h-24 mb-4 drop-shadow-xl filter hover:brightness-110 transition-all">
-                                        <img src="/badge.png" alt="Leadership Badge" className="w-full h-full object-contain" />
+                                {/* Content */}
+                                <div className="p-8">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="text-2xl">{skill.icon}</span>
+                                        <h3 className="text-2xl font-display font-bold text-cyber-dark">
+                                            {skill.name}
+                                        </h3>
                                     </div>
-                                    <div className="glass-strong bg-white/95 p-4 rounded-xl border border-cyber-blue/20 shadow-xl text-center w-64">
-                                        <p className="text-sm font-bold text-cyber-dark leading-snug">
-                                            Consistently served as Class Monitor from Middle School through High School, demonstrating sustained leadership and trust.
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            )}
 
-                            {/* Hover Popup */}
-                            {hoveredSkill === skill.id && (
-                                <motion.div
-                                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 z-50 w-48"
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <div className="glass-strong rounded-2xl p-4 shadow-2xl bg-white/90">
-                                        <div className="w-full bg-cyber-gray rounded-full h-2 mb-2">
-                                            <motion.div
-                                                className="h-full rounded-full"
-                                                style={{ backgroundColor: skill.color }}
-                                                initial={{ width: 0 }}
-                                                animate={{ width: `${skill.level}%` }}
-                                                transition={{ duration: 0.8, delay: 0.2 }}
-                                            />
-                                        </div>
-                                        <div className="text-xs text-center font-bold text-cyber-dark">
-                                            Proficiency: {skill.level}%
-                                        </div>
+                                    <p className="text-cyber-text opacity-70 leading-relaxed mb-6 font-medium">
+                                        {content.description}
+                                    </p>
+
+                                    {/* Progress Bar */}
+                                    <div className="w-full bg-cyber-gray/20 rounded-full h-2">
+                                        <motion.div
+                                            className="h-full rounded-full"
+                                            style={{ backgroundColor: skill.color }}
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: `${skill.level}%` }}
+                                            transition={{ duration: 1, delay: 0.5 }}
+                                        />
                                     </div>
-                                </motion.div>
-                            )}
-                        </motion.div>
-                    ))}
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
 
-            {/* Animated Background Elements */}
-            <div className="absolute top-20 left-10 w-32 h-32 bg-cyber-blue opacity-10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-20 right-10 w-40 h-40 bg-cyber-purple opacity-10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-            <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-cyber-cyan opacity-5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+            {/* Background Decoration */}
+            <div className="absolute top-20 left-10 w-64 h-64 bg-cyber-blue opacity-5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyber-purple opacity-5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </section>
     );
 }
