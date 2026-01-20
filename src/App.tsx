@@ -8,7 +8,6 @@ import { ProjectsSection } from './sections/ProjectsSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { ContactSection } from './sections/ContactSection';
 import { Navigation } from './components/Navigation';
-import { AdminPanel } from './pages/AdminPanel';
 import './index.css';
 
 function HomePage() {
@@ -55,7 +54,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<AdminPanel />} />
       </Routes>
     </Router>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Home, User, Code, Briefcase, Award, Mail, Settings } from 'lucide-react';
+import { Home, User, Code, Briefcase, Award, Mail } from 'lucide-react';
 
 export function Navigation() {
     const [scrolled, setScrolled] = useState(false);
@@ -86,14 +85,7 @@ export function Navigation() {
                         })}
                     </div>
 
-                    {/* Admin Link */}
-                    <Link
-                        to="/admin"
-                        className="glass-dark p-3 rounded-full hover-glow transition-all"
-                        title="Admin Panel"
-                    >
-                        <Settings size={20} />
-                    </Link>
+                    {/* Mobile Menu Button - Hidden for now */}
                 </div>
             </div>
 
@@ -108,8 +100,8 @@ export function Navigation() {
                                 key={item.id}
                                 onClick={() => scrollToSection(item.id)}
                                 className={`p-3 rounded-full transition-all ${isActive
-                                        ? 'bg-gradient-to-r from-cyber-blue to-cyber-purple text-cyber-dark scale-110 shadow-lg'
-                                        : 'text-cyber-dark hover:bg-white hover:bg-opacity-50'
+                                    ? 'bg-gradient-to-r from-cyber-blue to-cyber-purple text-cyber-dark scale-110 shadow-lg'
+                                    : 'text-cyber-dark hover:bg-white hover:bg-opacity-50'
                                     }`}
                             >
                                 <Icon size={20} />
