@@ -258,6 +258,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-10",
+            name: "SecureGen - Intelligent Password Generator",
+            description: "A security-focused password generator and analyzer featuring real-time entropy calculation, crack-time estimation, and multiple generation modes (including Paranoia mode). Built with a zero-logging, client-side architecture.",
+            techStack: ["React", "TypeScript", "Tailwind CSS", "Web Crypto API", "Vite"],
+            image: "/securegen.png",
+            githubLink: "https://github.com/ShakthiRithanya/secure-password-generator-",
+            liveLink: "",
+            role: "Frontend Security Engineer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -301,12 +312,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v16');
+        const stored = localStorage.getItem('portfolio_data_v17');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v16', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v17', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
