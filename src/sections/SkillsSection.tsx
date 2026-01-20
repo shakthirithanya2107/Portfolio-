@@ -30,8 +30,8 @@ export function SkillsSection() {
                 };
             case 'Organization':
                 return {
-                    image: '/organization.png',
-                    description: "Detail-oriented organizer capable of managing events and complex schedules efficiently."
+                    image: '/neurosphere.png',
+                    description: "Overall Co-ordinator of Neurosphere Galaxy. Orchestrated a major fundraising event for a noble cause."
                 };
             default:
                 return {
