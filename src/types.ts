@@ -46,6 +46,7 @@ export interface Experience {
     description: string;
     date: string;
     type: 'achievement' | 'experience' | 'education';
+    image?: string;
 }
 
 export interface PortfolioData {
@@ -294,6 +295,15 @@ export const defaultData: PortfolioData = {
     ],
     experiences: [
         {
+            id: "ach-1",
+            title: "3rd Prize - Math Expo 2025",
+            organization: "KITE (Department of Science & Humanities)",
+            description: "Awarded 3rd prize for building a software application that solves complex mathematical equations.",
+            date: "2025",
+            type: "achievement",
+            image: "/math_expo_prize.png"
+        },
+        {
             id: "1",
             title: "Achievement Title",
             organization: "Organization Name",
@@ -315,12 +325,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v20');
+        const stored = localStorage.getItem('portfolio_data_v21');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v20', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v21', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 

@@ -78,6 +78,15 @@ export function ExperienceSection() {
                                 </h3>
                                 <p className="text-cyber-purple font-semibold mb-3">{exp.organization}</p>
                                 <p className="text-cyber-text opacity-70">{exp.description}</p>
+                                {exp.image && (
+                                    <div className="mt-4">
+                                        <img
+                                            src={exp.image}
+                                            alt={exp.title}
+                                            className="rounded-xl shadow-lg max-h-60 w-auto object-cover border border-white/20 inline-block"
+                                        />
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ))}
