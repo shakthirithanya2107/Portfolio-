@@ -290,26 +290,7 @@ export const defaultData: PortfolioData = {
             role: "Full Stack Data Engineer",
             featured: true
         },
-        {
-            id: "1",
-            name: "Project Name",
-            description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
-            techStack: ["Python", "TensorFlow", "React"],
-            role: "Full Stack Developer",
-            githubLink: "https://github.com/ShakthiRithanya",
-            image: "https://placehold.co/600x400",
-            featured: true
-        },
-        {
-            id: "2",
-            name: "Another Project",
-            description: "What it does: [Describe the project]\n\nTech used: [Technologies]\n\nYour role: [Your role]",
-            techStack: ["Python", "FastAPI", "PostgreSQL"],
-            role: "Backend Developer",
-            githubLink: "https://github.com/ShakthiRithanya",
-            image: "https://placehold.co/600x400",
-            featured: false
-        }
+
     ],
     experiences: [
         {
@@ -334,12 +315,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v19');
+        const stored = localStorage.getItem('portfolio_data_v20');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v19', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v20', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
