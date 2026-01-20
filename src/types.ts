@@ -170,6 +170,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-2",
+            name: "MoodSync - AI Recommendation Engine",
+            description: "An intelligent recommendation engine that analyzes the 'DNA' of your favorite content using TF-IDF and Cosine Similarity to suggest hidden gems based on genres, descriptions, and authors.",
+            techStack: ["React", "FastAPI", "Scikit-learn", "SQLite", "Python"],
+            image: "/moodsync.jpg",
+            githubLink: "https://github.com/ShakthiRithanya/Mood-based-movie-and-book-recomender-",
+            liveLink: "",
+            role: "Full Stack Developer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -213,12 +224,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v8');
+        const stored = localStorage.getItem('portfolio_data_v9');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v8', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v9', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
