@@ -203,6 +203,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-5",
+            name: "Healthcare Risk Prediction System",
+            description: "A full-stack ML application for efficient patient risk assessment. Features intelligent risk stratification using K-means & PCA, role-based access control, and privacy-focused dashboarding.",
+            techStack: ["Python", "Flask", "scikit-learn", "Pandas", "SQLite"],
+            image: "/healthcare_dashboard.png",
+            githubLink: "https://lnkd.in/gjr_mS-Y",
+            liveLink: "",
+            role: "Full Stack ML Engineer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -246,12 +257,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v11');
+        const stored = localStorage.getItem('portfolio_data_v12');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v11', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v12', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
