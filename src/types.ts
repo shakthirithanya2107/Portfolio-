@@ -225,6 +225,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-7",
+            name: "VoiceSync AI - Voice-to-Task Assistant",
+            description: "An elite voice-to-task dashboard powered by LLaMA 3.1. Transforms natural speech into a perfectly organized timeline using high-precision math for second-accurate reminders and a premium glassmorphism UI.",
+            techStack: ["Vanilla JS", "Node.js", "Express.js", "Groq SDK (LLaMA 3.1)", "Web Speech API"],
+            image: "/voicesync.png",
+            githubLink: "https://github.com/ShakthiRithanya/VoiceSync-AI",
+            liveLink: "",
+            role: "Full Stack AI Developer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -268,12 +279,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v13');
+        const stored = localStorage.getItem('portfolio_data_v14');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v13', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v14', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
