@@ -25,7 +25,7 @@ export function SkillsSection() {
                 };
             case 'Organization':
                 return {
-                    image: 'https://placehold.co/600x400/e2e8f0/1e293b?text=Organization',
+                    image: '/organization.png',
                     description: "Detail-oriented organizer capable of managing events and complex schedules efficiently."
                 };
             default:
