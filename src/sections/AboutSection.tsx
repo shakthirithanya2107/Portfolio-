@@ -17,19 +17,22 @@ export function AboutSection() {
             icon: <Briefcase className="w-8 h-8" />,
             title: data.role,
             description: "Building the future with AI & ML",
-            color: "from-cyber-blue to-cyber-purple"
+            bgClass: "bg-cyber-blue/10 border-cyber-blue/20",
+            textClass: "text-cyber-blue"
         },
         {
             icon: <GraduationCap className="w-8 h-8" />,
             title: data.education.degree,
             description: `${data.education.college} • ${data.education.year}`,
-            color: "from-cyber-purple to-cyber-pink"
+            bgClass: "bg-cyber-purple/10 border-cyber-purple/20",
+            textClass: "text-cyber-purple"
         },
         {
             icon: <Target className="w-8 h-8" />,
             title: "Focus Areas",
             description: "AI/ML • Full Stack • Data • Finance Models",
-            color: "from-cyber-cyan to-cyber-blue"
+            bgClass: "bg-cyber-cyan/10 border-cyber-cyan/20",
+            textClass: "text-cyber-cyan"
         }
     ];
 
@@ -63,8 +66,8 @@ export function AboutSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
                         >
-                            <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                                <div className="text-white">
+                            <div className={`w-16 h-16 rounded-2xl ${card.bgClass} border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                                <div className={card.textClass}>
                                     {card.icon}
                                 </div>
                             </div>

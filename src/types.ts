@@ -61,7 +61,7 @@ export const defaultData: PortfolioData = {
         name: "Shakthi Rithanya",
         headline: "AI/ML Undergraduate | Full Stack | ML Developer | Data Analyst | Finance Model Driven",
         role: "Student, Builder",
-        bio: "I build AI, ML, and intelligent systems. Passionate about creating innovative solutions that bridge technology and real-world problems. Currently pursuing BE CSE (AI & ML) at KGISL Institute of Technology.",
+        bio: "Driven by curiosity and code, I explore the intersections of Artificial Intelligence and human potential. My journey is one of constant evolution—transforming abstract concepts into tangible, intelligent systems. As a 2nd-year AI & ML student at KGISL Institute of Technology, I'm not just studying the future; I'm actively building it, one algorithm at a time. From predictive finance models to dynamic full-stack applications, I craft solutions that perform.",
         image: "https://placehold.co/400",
         education: {
             degree: "BE CSE (AI & ML)",
@@ -178,12 +178,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v3');
+        const stored = localStorage.getItem('portfolio_data_v4');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v3', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v4', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
