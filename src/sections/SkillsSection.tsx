@@ -36,7 +36,7 @@ export function SkillsSection() {
                     {data.filter(s => s.category === 'Life Skills').map((skill, index) => (
                         <motion.div
                             key={skill.id}
-                            className="relative group w-40 h-40"
+                            className="relative group w-40 flex flex-col items-center"
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -46,7 +46,7 @@ export function SkillsSection() {
                         >
                             {/* Skill Orb */}
                             <div
-                                className="w-full h-full glass-strong rounded-full flex flex-col items-center justify-center p-6 hover-glow cursor-pointer transition-all duration-300"
+                                className="w-40 h-40 glass-strong rounded-full flex flex-col items-center justify-center p-6 hover-glow cursor-pointer transition-all duration-300 shrink-0 relative z-10"
                                 style={{
                                     boxShadow: hoveredSkill === skill.id ? `0 0 40px ${skill.color}80` : undefined,
                                     transform: hoveredSkill === skill.id ? 'scale(1.1) translateY(-10px)' : undefined
@@ -55,6 +55,26 @@ export function SkillsSection() {
                                 <div className="text-5xl mb-3 animate-float">{skill.icon}</div>
                                 <div className="text-base font-bold text-center text-cyber-dark">{skill.name}</div>
                             </div>
+
+                            {/* Leadership Badge & Description */}
+                            {skill.name === 'Leadership' && (
+                                <motion.div
+                                    className="pt-8 flex flex-col items-center z-0"
+                                    initial={{ opacity: 0, y: -20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.8 }}
+                                >
+                                    <div className="w-1 h-8 bg-gradient-to-b from-cyber-blue/50 to-transparent absolute top-40" />
+                                    <div className="w-24 h-24 mb-4 drop-shadow-xl filter hover:brightness-110 transition-all">
+                                        <img src="/badge.png" alt="Leadership Badge" className="w-full h-full object-contain" />
+                                    </div>
+                                    <div className="glass-strong bg-white/95 p-4 rounded-xl border border-cyber-blue/20 shadow-xl text-center w-64">
+                                        <p className="text-sm font-bold text-cyber-dark leading-snug">
+                                            "I was the class monitor every year from middle school to high school"
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            )}
 
                             {/* Hover Popup */}
                             {hoveredSkill === skill.id && (
