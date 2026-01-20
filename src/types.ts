@@ -295,6 +295,15 @@ export const defaultData: PortfolioData = {
     ],
     experiences: [
         {
+            id: "exp-forage-labeling",
+            title: "Data Labeling Job Simulation",
+            organization: "Forage",
+            description: "Completed a job simulation as a Data Labeling Analyst, classifying customer support messages for Intent, Sentiment, and PII. Evaluated edge cases, ensured consistency across data, and improved labeling guidelines, strengthening skills in AI ops and human-AI collaboration.",
+            date: "Jan 2026",
+            type: "experience",
+            image: "/forage_certificate.png"
+        },
+        {
             id: "exp-skill-radar",
             title: "AI Innovation Learning Sprint",
             organization: "Skill Radar",
@@ -343,12 +352,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v23');
+        const stored = localStorage.getItem('portfolio_data_v24');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v23', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v24', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
