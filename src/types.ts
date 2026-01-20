@@ -63,7 +63,7 @@ export const defaultData: PortfolioData = {
         headline: "AI/ML Undergraduate | Full Stack | ML Developer | Data Analyst | Finance Model Driven",
         role: "Student, Builder",
         bio: "Driven by curiosity and code, I explore the intersections of Artificial Intelligence and human potential. My journey is one of constant evolution—transforming abstract concepts into tangible, intelligent systems. As a 2nd-year AI & ML student at KGISL Institute of Technology, I'm not just studying the future; I'm actively building it, one algorithm at a time. From predictive finance models to dynamic full-stack applications, I craft solutions that perform.",
-        image: "https://placehold.co/400",
+        image: "/profile.jpg",
         education: {
             degree: "BE CSE (AI & ML)",
             college: "KGISL Institute of Technology",
@@ -352,12 +352,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v24');
+        const stored = localStorage.getItem('portfolio_data_v25');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v24', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v25', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
