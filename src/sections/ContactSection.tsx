@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, MapPin } from 'lucide-react';
+import { Mail, Github, Linkedin, Send } from 'lucide-react';
 import { storage } from '../types';
 
 export function ContactSection() {
@@ -41,11 +41,11 @@ export function ContactSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyber-blue to-cyber-purple flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <Mail className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyber-blue/10 flex items-center justify-center group-hover:scale-110 transition-transform border border-cyber-blue/20">
+                            <Mail className="w-8 h-8 text-cyber-blue" />
                         </div>
                         <h3 className="text-xl font-display font-bold text-cyber-dark mb-2">Email</h3>
-                        <p className="text-cyber-text opacity-70 break-all">{data.contact.email}</p>
+                        <p className="text-cyber-text opacity-70 break-all font-medium">{data.contact.email}</p>
                     </motion.a>
 
                     <motion.a
@@ -58,11 +58,11 @@ export function ContactSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                     >
-                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyber-purple to-cyber-pink flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <Github className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyber-purple/10 flex items-center justify-center group-hover:scale-110 transition-transform border border-cyber-purple/20">
+                            <Github className="w-8 h-8 text-cyber-purple" />
                         </div>
                         <h3 className="text-xl font-display font-bold text-cyber-dark mb-2">GitHub</h3>
-                        <p className="text-cyber-text opacity-70">View my code</p>
+                        <p className="text-cyber-text opacity-70 font-medium">View my code</p>
                     </motion.a>
 
                     <motion.a
@@ -75,8 +75,8 @@ export function ContactSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-cyber-cyan to-cyber-blue flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <Linkedin className="w-8 h-8 text-white" />
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-cyber-cyan/10 flex items-center justify-center group-hover:scale-110 transition-transform border border-cyber-cyan/20">
+                            <Linkedin className="w-8 h-8 text-cyber-cyan" />
                         </div>
                         <h3 className="text-xl font-display font-bold text-cyber-dark mb-2">LinkedIn</h3>
                         <p className="text-cyber-text opacity-70">Let's connect</p>

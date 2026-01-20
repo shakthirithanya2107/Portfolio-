@@ -68,7 +68,7 @@ export function ExperienceSection() {
                             <div className="glass-strong rounded-2xl p-6 ml-16 md:ml-0 hover-lift">
                                 <div className={`flex items-center gap-3 mb-3 ${index % 2 === 0 ? 'md:justify-end' : ''
                                     }`}>
-                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyber-blue to-cyber-purple flex items-center justify-center text-white">
+                                    <div className="w-10 h-10 rounded-full bg-cyber-blue/10 flex items-center justify-center text-cyber-blue border border-cyber-blue/20">
                                         {getIcon(exp.type)}
                                     </div>
                                     <span className="text-sm font-mono text-cyber-blue">{exp.date}</span>
