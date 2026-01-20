@@ -214,6 +214,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-6",
+            name: "Neuroverse Galaxy Fundraiser",
+            description: "A full-stack event management platform for the 'Neuroverse Galaxy' charity event. Features secure student authentication, stall booking, and a real-time admin dashboard.",
+            techStack: ["React", "Node.js", "Express.js", "Prisma", "SQLite"],
+            image: "/neuroverse_galaxy.png",
+            githubLink: "https://github.com/ShakthiRithanya/neuroverse-galaxy-fundraiser",
+            liveLink: "",
+            role: "Full Stack Developer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -257,12 +268,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v12');
+        const stored = localStorage.getItem('portfolio_data_v13');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v12', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v13', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
