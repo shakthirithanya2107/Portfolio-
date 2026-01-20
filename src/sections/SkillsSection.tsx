@@ -70,7 +70,7 @@ export function SkillsSection() {
                                     </div>
                                     <div className="glass-strong bg-white/95 p-4 rounded-xl border border-cyber-blue/20 shadow-xl text-center w-64">
                                         <p className="text-sm font-bold text-cyber-dark leading-snug">
-                                            I was the Class Monitor every year from Middle School to High School
+                                            Consistently served as Class Monitor from Middle School through High School, demonstrating sustained leadership and trust.
                                         </p>
                                     </div>
                                 </motion.div>
