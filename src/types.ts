@@ -181,6 +181,17 @@ export const defaultData: PortfolioData = {
             featured: true
         },
         {
+            id: "new-3",
+            name: "What The World Feels Like - Global Dashboard",
+            description: "A Global Situation Awareness Dashboard that aggregates real-time data to measure a country’s national stress index. Features news mood analysis, currency volatility tracking, and a social tension engine.",
+            techStack: ["Python", "Streamlit", "NLP", "Pandas"],
+            image: "/global_dashboard.png",
+            githubLink: "https://github.com/ShakthiRithanya/Global-Situation-Awareness-Dashboard",
+            liveLink: "",
+            role: "Data Scientist & Developer",
+            featured: true
+        },
+        {
             id: "1",
             name: "Project Name",
             description: "What it does: [Describe the project's purpose and impact]\n\nTech used: [List technologies]\n\nYour role: [Your contribution]",
@@ -224,12 +235,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v9');
+        const stored = localStorage.getItem('portfolio_data_v10');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v9', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v10', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
