@@ -23,6 +23,11 @@ export function SkillsSection() {
                     image: '/communication.png',
                     description: "Effective communicator with experience in public speaking and team collaboration."
                 };
+            case 'Team Work':
+                return {
+                    image: '/teamwork.png',
+                    description: "Collaborating effectively with diverse groups to achieve common goals in academic and project settings."
+                };
             case 'Organization':
                 return {
                     image: '/organization.png',
