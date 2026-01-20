@@ -29,6 +29,24 @@ export function HeroSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
+                    {/* Profile Image Placeholder */}
+                    {data.image && (
+                        <motion.div
+                            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full p-1 bg-gradient-to-tr from-cyber-blue to-cyber-purple shadow-glow-lg"
+                            initial={{ scale: 0, rotate: -180 }}
+                            animate={{ scale: 1, rotate: 0 }}
+                            transition={{ duration: 0.8, type: 'spring' }}
+                        >
+                            <div className="w-full h-full rounded-full overflow-hidden border-4 border-white">
+                                <img
+                                    src={data.image}
+                                    alt={data.name}
+                                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                                />
+                            </div>
+                        </motion.div>
+                    )}
+
                     {/* Greeting */}
                     <motion.p
                         className="text-xl md:text-2xl font-mono text-cyber-blue mb-4"

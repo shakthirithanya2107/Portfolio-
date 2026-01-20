@@ -16,7 +16,7 @@ export function AIBrain({ position }: { position: [number, number, number] }) {
 
     return (
         <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-            <Sphere ref={meshRef} args={[1, 64, 64]} position={position}>
+            <Sphere ref={meshRef} args={[2.5, 64, 64]} position={position}>
                 <MeshDistortMaterial
                     color="#60A5FA"
                     attach="material"
@@ -43,7 +43,7 @@ export function CodeBlock({ position }: { position: [number, number, number] }) 
 
     return (
         <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.8}>
-            <Box ref={meshRef} args={[1.2, 1.2, 1.2]} position={position}>
+            <Box ref={meshRef} args={[3, 3, 3]} position={position}>
                 <meshStandardMaterial
                     color="#A78BFA"
                     metalness={0.7}
@@ -69,7 +69,7 @@ export function DataTorus({ position }: { position: [number, number, number] }) 
 
     return (
         <Float speed={2.5} rotationIntensity={0.6} floatIntensity={0.6}>
-            <Torus ref={meshRef} args={[1, 0.4, 16, 100]} position={position}>
+            <Torus ref={meshRef} args={[2, 0.8, 16, 100]} position={position}>
                 <meshStandardMaterial
                     color="#22D3EE"
                     metalness={0.8}
@@ -95,7 +95,7 @@ export function HoloOctahedron({ position }: { position: [number, number, number
 
     return (
         <Float speed={1.8} rotationIntensity={0.4} floatIntensity={0.7}>
-            <Octahedron ref={meshRef} args={[1]} position={position}>
+            <Octahedron ref={meshRef} args={[2.5]} position={position}>
                 <meshStandardMaterial
                     color="#F472B6"
                     metalness={0.9}
@@ -123,7 +123,7 @@ export function GlowSphere({ position, color }: { position: [number, number, num
 
     return (
         <Float speed={3} rotationIntensity={0.2} floatIntensity={1}>
-            <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position}>
+            <Sphere ref={meshRef} args={[1.2, 32, 32]} position={position}>
                 <meshStandardMaterial
                     color={color}
                     emissive={color}

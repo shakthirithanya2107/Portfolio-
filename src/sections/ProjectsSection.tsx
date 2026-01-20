@@ -35,6 +35,24 @@ export function ProjectsSection() {
                         Building solutions that matter
                     </p>
 
+                    {/* Technologies Known Summary */}
+                    <div className="mb-12">
+                        <h3 className="text-2xl font-display font-bold text-cyber-dark mb-4">Technologies I Work With</h3>
+                        <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+                            {Array.from(new Set(data.flatMap(p => p.techStack))).map((tech, i) => (
+                                <motion.span
+                                    key={i}
+                                    className="glass-dark px-4 py-2 rounded-full font-semibold text-cyber-blue"
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: i * 0.05 }}
+                                >
+                                    {tech}
+                                </motion.span>
+                            ))}
+                        </div>
+                    </div>
+
                     {/* Filter */}
                     <div className="flex gap-4 justify-center">
                         <button

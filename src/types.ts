@@ -62,7 +62,7 @@ export const defaultData: PortfolioData = {
         headline: "AI/ML Undergraduate | Full Stack | ML Developer | Data Analyst | Finance Model Driven",
         role: "Student, Builder",
         bio: "I build AI, ML, and intelligent systems. Passionate about creating innovative solutions that bridge technology and real-world problems. Currently pursuing BE CSE (AI & ML) at KGISL Institute of Technology.",
-        image: "",
+        image: "https://placehold.co/400",
         education: {
             degree: "BE CSE (AI & ML)",
             college: "KGISL Institute of Technology",
@@ -95,7 +95,7 @@ export const defaultData: PortfolioData = {
         {
             id: "3",
             name: "Leadership",
-            category: "Soft Skills",
+            category: "Life Skills",
             level: 88,
             icon: "👑",
             color: "#F472B6"
@@ -103,7 +103,7 @@ export const defaultData: PortfolioData = {
         {
             id: "4",
             name: "Communication",
-            category: "Soft Skills",
+            category: "Life Skills",
             level: 85,
             icon: "💬",
             color: "#22D3EE"
@@ -133,7 +133,7 @@ export const defaultData: PortfolioData = {
             techStack: ["Python", "TensorFlow", "React"],
             role: "Full Stack Developer",
             githubLink: "https://github.com/ShakthiRithanya",
-            image: "",
+            image: "https://placehold.co/600x400",
             featured: true
         },
         {
@@ -143,7 +143,7 @@ export const defaultData: PortfolioData = {
             techStack: ["Python", "FastAPI", "PostgreSQL"],
             role: "Backend Developer",
             githubLink: "https://github.com/ShakthiRithanya",
-            image: "",
+            image: "https://placehold.co/600x400",
             featured: false
         }
     ],
