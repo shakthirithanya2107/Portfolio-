@@ -256,3 +256,76 @@ h6 {
   outline: 2px solid #60A5FA;
   outline-offset: 2px;
 }
+
+@media print {
+  @page {
+    margin: 10mm;
+    size: auto;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    overflow: visible !important;
+    min-width: 1024px;
+    /* Ensure desktop layout is respected */
+  }
+
+  /* Reset root styles that might interfere */
+  #root {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide navigation, buttons, and decorative elements explicitly */
+  nav,
+  button,
+  .no-print,
+  .particle,
+  .cyber-grid,
+  .glass-background,
+  .fixed,
+  header.fixed,
+  .absolute {
+    display: none !important;
+  }
+
+  /* Allow absolute positioning specifically for the resume if needed */
+  .resume-container .absolute {
+    display: block !important;
+  }
+
+  /* Ensure resume container takes full width and is visible */
+  .resume-container {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    float: none !important;
+    clear: both !important;
+  }
+
+  /* Ensure text is black for better readability */
+  .resume-container * {
+    color: black !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Preserve printing of colors */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

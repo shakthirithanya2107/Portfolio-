@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Home, User, Code, Briefcase, Award, Mail } from 'lucide-react';
+import { Home, User, Code, Briefcase, Award, Mail, FileText } from 'lucide-react';
 
 export function Navigation() {
     const [scrolled, setScrolled] = useState(false);
@@ -33,10 +33,21 @@ export function Navigation() {
         { id: 'skills', label: 'Skills', icon: Code },
         { id: 'projects', label: 'Projects', icon: Briefcase },
         { id: 'experience', label: 'Experience', icon: Award },
+        { id: 'resume', label: 'Resume', icon: FileText },
         { id: 'contact', label: 'Contact', icon: Mail },
     ];
 
     const scrollToSection = (id: string) => {
+        if (id === 'resume') {
+            window.location.href = '/resume';
+            return;
+        }
+
+        if (window.location.pathname !== '/') {
+            window.location.href = '/#' + id;
+            return;
+        }
+
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });

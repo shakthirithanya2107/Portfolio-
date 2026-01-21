@@ -8,6 +8,7 @@ import { ProjectsSection } from './sections/ProjectsSection';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { ContactSection } from './sections/ContactSection';
 import { Navigation } from './components/Navigation';
+import { Resume } from './pages/Resume';
 import './index.css';
 
 function HomePage() {
@@ -54,6 +55,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
     </Router>
   );

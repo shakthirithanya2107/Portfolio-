@@ -49,11 +49,17 @@ export interface Experience {
     image?: string;
 }
 
+export interface ResumeData {
+    pdfUrl: string;
+    lastUpdated: string;
+}
+
 export interface PortfolioData {
     profile: ProfileData;
     skills: Skill[];
     projects: Project[];
     experiences: Experience[];
+    resume: ResumeData;
 }
 
 // Default Data
@@ -330,34 +336,24 @@ export const defaultData: PortfolioData = {
             type: "achievement",
             image: "/math_expo_prize.png"
         },
-        {
-            id: "1",
-            title: "Achievement Title",
-            organization: "Organization Name",
-            description: "Description of achievement or experience",
-            date: "2024",
-            type: "achievement"
-        },
-        {
-            id: "2",
-            title: "Experience Title",
-            organization: "Company/Organization",
-            description: "What you did and learned",
-            date: "2023-2024",
-            type: "experience"
-        }
-    ]
+
+
+    ],
+    resume: {
+        pdfUrl: "",
+        lastUpdated: new Date().toISOString()
+    }
 };
 
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v25');
+        const stored = localStorage.getItem('portfolio_data_v27');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v25', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v27', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
@@ -379,6 +375,11 @@ export const storage = {
     updateExperiences: (experiences: Experience[]) => {
         const data = storage.getData();
         storage.saveData({ ...data, experiences });
+    },
+
+    updateResume: (resume: ResumeData) => {
+        const data = storage.getData();
+        storage.saveData({ ...data, resume });
     },
 
     exportData: () => {

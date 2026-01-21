@@ -21,7 +21,7 @@ export function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden pt-28">
             {/* Content */}
             {/* Content Container */}
             <div className="relative z-20 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
