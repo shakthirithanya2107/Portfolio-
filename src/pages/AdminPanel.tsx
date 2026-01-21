@@ -89,8 +89,8 @@ export function AdminPanel() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`flex-1 px-6 py-4 rounded-2xl font-semibold flex items-center justify-center gap-2 transition-all ${activeTab === tab.id
-                                        ? 'bg-gradient-to-r from-cyber-blue to-cyber-purple text-white'
-                                        : 'hover:bg-white hover:bg-opacity-50'
+                                    ? 'bg-gradient-to-r from-cyber-blue to-cyber-purple text-white'
+                                    : 'hover:bg-white hover:bg-opacity-50'
                                     }`}
                             >
                                 <Icon size={20} />
