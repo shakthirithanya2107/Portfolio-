@@ -3,6 +3,25 @@ import { motion } from 'framer-motion';
 import { Github, ExternalLink, Star } from 'lucide-react';
 import { storage } from '../types';
 
+const majorTechnologies = [
+    {
+        category: 'Programming Languages',
+        skills: ['Python', 'JavaScript', 'TypeScript']
+    },
+    {
+        category: 'AI / Machine Learning',
+        skills: ['Machine Learning', 'Explainable AI (XAI)', 'SHAP', 'XGBoost', 'Scikit-learn', 'Gemini AI API']
+    },
+    {
+        category: 'Web & Frameworks',
+        skills: ['React 18', 'Next.js', 'FastAPI', 'Flask', 'Tailwind CSS']
+    },
+    {
+        category: 'Databases & Tools',
+        skills: ['SQLite', 'SQLModel', 'SQLAlchemy', 'Git', 'Vite', 'Streamlit']
+    }
+];
+
 export function ProjectsSection() {
     const [data, setData] = useState(storage.getData().projects);
     const [filter, setFilter] = useState<'all' | 'featured'>('all');
@@ -22,7 +41,7 @@ export function ProjectsSection() {
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <motion.div
-                    className="text-center mb-12"
+                    className="text-center mb-16"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -31,27 +50,43 @@ export function ProjectsSection() {
                     <h2 className="text-5xl md:text-6xl font-display font-bold text-gradient mb-6">
                         Projects
                     </h2>
-                    <p className="text-xl text-cyber-text opacity-70 max-w-2xl mx-auto mb-8">
+                    <p className="text-xl text-cyber-text opacity-70 max-w-2xl mx-auto mb-12">
                         Building solutions that matter
                     </p>
 
                     {/* Technologies Known Summary */}
-                    <div className="mb-12">
-                        <h3 className="text-2xl font-display font-bold text-cyber-dark mb-4">Technologies I Work With</h3>
-                        <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
-                            {Array.from(new Set(data.flatMap(p => p.techStack))).map((tech, i) => (
-                                <motion.span
-                                    key={i}
-                                    className="glass-dark px-4 py-2 rounded-full font-semibold text-cyber-blue"
-                                    initial={{ opacity: 0, scale: 0.8 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: i * 0.05 }}
+                    <div className="mb-20">
+                        <h3 className="text-2xl font-display font-bold text-cyber-dark mb-8">
+                            Technologies I Work With
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto text-left">
+                            {majorTechnologies.map((cat, groupIdx) => (
+                                <motion.div
+                                    key={cat.category}
+                                    className="glass-strong p-6 rounded-3xl border border-white/40 hover:border-cyber-purple/40 hover:shadow-glow transition-all duration-300 hover:scale-[1.02]"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: groupIdx * 0.1, duration: 0.5 }}
                                 >
-                                    {tech}
-                                </motion.span>
+                                    <h4 className="text-lg font-display font-bold text-cyber-dark mb-4 border-b border-cyber-purple/20 pb-2">
+                                        {cat.category}
+                                    </h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {cat.skills.map((skill, i) => (
+                                            <span
+                                                key={i}
+                                                className="glass-dark px-3 py-1.5 rounded-full text-xs font-semibold text-red-800 border border-red-200/50"
+                                            >
+                                                {skill}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
+
 
                     {/* Filter */}
                     <div className="flex gap-4 justify-center">
@@ -73,11 +108,11 @@ export function ProjectsSection() {
                 </motion.div>
 
                 {/* Projects Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                     {filteredProjects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            className="glass-strong rounded-3xl overflow-hidden hover-lift card-3d group"
+                            className="glass-strong rounded-3xl overflow-hidden hover-lift card-3d group flex flex-col"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -105,12 +140,12 @@ export function ProjectsSection() {
                             </div>
 
                             {/* Project Content */}
-                            <div className="p-6">
+                            <div className="p-6 flex flex-col flex-1">
                                 <h3 className="text-2xl font-display font-bold text-cyber-dark mb-3">
                                     {project.name}
                                 </h3>
 
-                                <p className="text-cyber-text opacity-70 mb-4 line-clamp-3 whitespace-pre-line">
+                                <p className="text-cyber-text opacity-70 mb-4 whitespace-pre-line leading-relaxed flex-1">
                                     {project.description}
                                 </p>
 
@@ -127,7 +162,7 @@ export function ProjectsSection() {
                                 </div>
 
                                 {/* Links */}
-                                <div className="flex gap-3">
+                                <div className="flex gap-3 mt-auto">
                                     <a
                                         href={project.githubLink}
                                         target="_blank"

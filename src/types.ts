@@ -166,149 +166,62 @@ export const defaultData: PortfolioData = {
     ],
     projects: [
         {
-            id: "new-1",
-            name: "AI-Powered Financial Statement Analyzer (v1.2 PRO)",
-            description: "A Financial Intelligence Platform that transforms static PDF reports into actionable investment insights in seconds. Features a 3-Stage Analysis Pipeline: Extraction Lab, Analysis Desk, and AI War Room.",
-            techStack: ["Python", "Streamlit", "Gemini 1.5", "Pandas", "Plotly"],
-            image: "/fin_analyzer_dashboard.png",
-            githubLink: "https://lnkd.in/gQDP5tVq",
+            id: "proj-fin-analyzer",
+            name: "AI-Powered Financial Statement Analyzer",
+            description: "An AI-powered financial intelligence platform that parses static PDF, Excel, and CSV financial reports, normalizes key line items, calculates key financial ratios, and leverages Google Gemini to provide deep insights, risk analysis, and investment recommendations.",
+            techStack: ["Python", "Streamlit", "Gemini AI", "Pandas", "Plotly", "PDFPlumber"],
+            image: "/proj_fin_analyzer.png",
+            githubLink: "https://github.com/ShakthiRithanya/Ai-Financial-Statement-Analyzer",
             liveLink: "",
-            role: "Lead Developer & Architect",
+            role: "AI Product Developer",
             featured: true
         },
         {
-            id: "new-2",
-            name: "MoodSync - AI Recommendation Engine",
-            description: "An intelligent recommendation engine that analyzes the 'DNA' of your favorite content using TF-IDF and Cosine Similarity to suggest hidden gems based on genres, descriptions, and authors.",
-            techStack: ["React", "FastAPI", "Scikit-learn", "SQLite", "Python"],
-            image: "/moodsync.jpg",
-            githubLink: "https://github.com/ShakthiRithanya/Mood-based-movie-and-book-recomender-",
+            id: "proj-intelli-credit",
+            name: "Intelli-Credit",
+            description: "An AI-driven credit scoring and risk decisioning engine designed for modern financial institutions. Utilizes Explainable AI (SHAP) for transparent risk scoring, implements a What-If simulation sandbox, and uses a 5C RADAR framework to automate Credit Appraisal Memo generation.",
+            techStack: ["React 18", "FastAPI", "SQLite", "SHAP", "Gradient Boosting"],
+            image: "/proj_intelli_credit.png",
+            githubLink: "https://github.com/ShakthiRithanya/Intelli-Credit",
             liveLink: "",
-            role: "Full Stack Developer",
+            role: "AI/ML Project Developer",
             featured: true
         },
         {
-            id: "new-3",
-            name: "What The World Feels Like - Global Dashboard",
-            description: "A Global Situation Awareness Dashboard that aggregates real-time data to measure a country’s national stress index. Features news mood analysis, currency volatility tracking, and a social tension engine.",
-            techStack: ["Python", "Streamlit", "NLP", "Pandas"],
-            image: "/global_dashboard.png",
-            githubLink: "https://github.com/ShakthiRithanya/Global-Situation-Awareness-Dashboard",
-            liveLink: "",
-            role: "Data Scientist & Developer",
-            featured: true
-        },
-        {
-            id: "new-4",
-            name: "Path Finder - BFS vs DFS Algorithm Visualizer",
-            description: "An interactive web application visualizing BFS and DFS algorithms in real-time. Created to compare performance metrics like execution time and path length within randomized mazes.",
-            techStack: ["Vanilla JS", "HTML5 Canvas", "Chart.js", "CSS3"],
-            image: "/pathfinder.png",
-            githubLink: "https://lnkd.in/gUfZSvs4",
-            liveLink: "",
-            role: "Frontend Developer & Algorithm Engineer",
-            featured: true
-        },
-        {
-            id: "new-5",
-            name: "Healthcare Risk Prediction System",
-            description: "A full-stack ML application for efficient patient risk assessment. Features intelligent risk stratification using K-means & PCA, role-based access control, and privacy-focused dashboarding.",
-            techStack: ["Python", "Flask", "scikit-learn", "Pandas", "SQLite"],
-            image: "/healthcare_dashboard.png",
-            githubLink: "https://lnkd.in/gjr_mS-Y",
-            liveLink: "",
-            role: "Full Stack ML Engineer",
-            featured: true
-        },
-        {
-            id: "new-6",
-            name: "Neuroverse Galaxy Fundraiser",
-            description: "A full-stack event management platform for the 'Neuroverse Galaxy' charity event. Features secure student authentication, stall booking, and a real-time admin dashboard.",
-            techStack: ["React", "Node.js", "Express.js", "Prisma", "SQLite"],
-            image: "/neuroverse_galaxy.png",
-            githubLink: "https://github.com/ShakthiRithanya/neuroverse-galaxy-fundraiser",
-            liveLink: "",
-            role: "Full Stack Developer",
-            featured: true
-        },
-        {
-            id: "new-7",
-            name: "VoiceSync AI - Voice-to-Task Assistant",
-            description: "An elite voice-to-task dashboard powered by LLaMA 3.1. Transforms natural speech into a perfectly organized timeline using high-precision math for second-accurate reminders and a premium glassmorphism UI.",
-            techStack: ["Vanilla JS", "Node.js", "Express.js", "Groq SDK (LLaMA 3.1)", "Web Speech API"],
-            image: "/voicesync.png",
-            githubLink: "https://github.com/ShakthiRithanya/VoiceSync-AI",
+            id: "proj-vazhikaatti",
+            name: "VazhiKaatti",
+            description: "An AI-powered agricultural credit companion platform to empower rural women farmers. Integrates machine learning-based credit scoring, Tamil/English bilingual interfaces, speech-to-text voice input for accessibility, document verification modules, and scheme recommendations.",
+            techStack: ["React 18", "FastAPI", "Scikit-learn", "SQLAlchemy", "Speech-to-Text"],
+            image: "/proj_vazhikaatti.png",
+            githubLink: "https://github.com/ShakthiRithanya/VAZHIKAATI",
             liveLink: "",
             role: "Full Stack AI Developer",
             featured: true
         },
         {
-            id: "new-8",
-            name: "Resume Skill Gap Analyzer",
-            description: "A career intelligence platform that parses resumes, compares them against job descriptions, and provides visualized skill gap analysis with a personalized learning roadmap.",
-            techStack: ["Streamlit", "Python", "Regex", "Fuzzy Matching", "Plotly"],
-            image: "/career_analyzer.png",
-            githubLink: "https://github.com/ShakthiRithanya/Career-Skill-Gap-Analyzer",
+            id: "proj-securehealth-ai",
+            name: "SecureHealth AI",
+            description: "An AI-agent powered hospital security and access control system. Employs a Gradient Boosting model to detect insider threat anomalies from access logs with real-time WebSocket alerts and auto-locking features, and a Privacy Query Agent scope-locked with Gemini 1.5 Flash for natural language data queries.",
+            techStack: ["React 18", "FastAPI", "SQLite", "WebSockets", "Gemini AI"],
+            image: "/proj_securehealth.png",
+            githubLink: "https://github.com/ShakthiRithanya/Securehealth-ai",
             liveLink: "",
-            role: "Data Scientist & Developer",
+            role: "AI Platform Developer",
             featured: true
         },
         {
-            id: "new-9",
-            name: "GitHub Mood Garden",
-            description: "A gamified productivity tracker that turns your GitHub contribution streaks into a virtual garden. Features mood logging and a retro-Tamagotchi aesthetic to make coding consistency fun.",
-            techStack: ["React", "TypeScript", "Node.js", "PostgreSQL", "GitHub OAuth"],
-            image: "/github_garden.png",
-            githubLink: "https://github.com/ShakthiRithanya/GITHUB-GARDEN",
+            id: "proj-matrinet",
+            name: "MATRINET",
+            description: "An AI-powered maternal and child healthcare monitoring system designed for early risk detection. Includes specialized dashboards for hospitals, beneficiaries, and health authorities with predictive analysis, healthcare coverage tracking, and secure role-based management.",
+            techStack: ["React", "FastAPI", "SQLite", "SQLModel"],
+            image: "/proj_matrinet.png",
+            githubLink: "https://github.com/ShakthiRithanya/MATRINET",
             liveLink: "",
-            role: "Full Stack Developer",
+            role: "AI Healthcare Platform Developer",
             featured: true
-        },
-        {
-            id: "new-10",
-            name: "SecureGen - Intelligent Password Generator",
-            description: "A security-focused password generator and analyzer featuring real-time entropy calculation, crack-time estimation, and multiple generation modes (including Paranoia mode). Built with a zero-logging, client-side architecture.",
-            techStack: ["React", "TypeScript", "Tailwind CSS", "Web Crypto API", "Vite"],
-            image: "/securegen.png",
-            githubLink: "https://github.com/ShakthiRithanya/secure-password-generator-",
-            liveLink: "",
-            role: "Frontend Security Engineer",
-            featured: true
-        },
-        {
-            id: "new-11",
-            name: "MindWatch - AI Stress Detection",
-            description: "An NLP-powered mental health application that detects stress levels from user text. Features explainable AI, visual feedback, and safety alerts using TF-IDF and Logistic Regression.",
-            techStack: ["Streamlit", "Python", "Scikit-Learn", "NLTK", "Matplotlib"],
-            image: "/mindwatch.png",
-            githubLink: "https://github.com/ShakthiRithanya/text-to-stress-",
-            liveLink: "",
-            role: "AI/NLP Engineer",
-            featured: true
-        },
-        {
-            id: "new-12",
-            name: "SoundSpace 3D - Audio Visualizer",
-            description: "A 3D music analysis tool that reduces 9 audio dimensions into an interactive 3D map using PCA & K-Means clustering. Visualizes 'Taste Clusters' and provides song recommendations based on Euclidean distance.",
-            techStack: ["React", "Python", "Flask", "Scikit-Learn", "Plotly.js"],
-            image: "/soundspace.png",
-            githubLink: "https://github.com/ShakthiRithanya/SoundSpace-3D",
-            liveLink: "",
-            role: "Full Stack Data Engineer",
-            featured: true
-        },
-
+        }
     ],
     experiences: [
-        {
-            id: "exp-forage-labeling",
-            title: "Data Labeling Job Simulation",
-            organization: "Forage",
-            description: "Completed a job simulation as a Data Labeling Analyst, classifying customer support messages for Intent, Sentiment, and PII. Evaluated edge cases, ensured consistency across data, and improved labeling guidelines, strengthening skills in AI ops and human-AI collaboration.",
-            date: "Jan 2026",
-            type: "experience",
-            image: "/forage_certificate.png"
-        },
         {
             id: "exp-skill-radar",
             title: "AI Innovation Learning Sprint",
@@ -348,12 +261,12 @@ export const defaultData: PortfolioData = {
 // Storage utilities
 export const storage = {
     getData: (): PortfolioData => {
-        const stored = localStorage.getItem('portfolio_data_v27');
+        const stored = localStorage.getItem('portfolio_data_v30');
         return stored ? JSON.parse(stored) : defaultData;
     },
 
     saveData: (data: PortfolioData) => {
-        localStorage.setItem('portfolio_data_v27', JSON.stringify(data));
+        localStorage.setItem('portfolio_data_v30', JSON.stringify(data));
         window.dispatchEvent(new Event('storage'));
     },
 
